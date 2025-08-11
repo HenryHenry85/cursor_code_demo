@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Fixed Header Table</title>
+    <style>
+        /* Essential CSS for fixed header scrollable table */
+        .table-wrapper {
+            height: 300px;          /* Set fixed height */
+            overflow-y: auto;       /* Enable vertical scrolling */
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            position: sticky;       /* Key property for fixed header */
+            top: 0;                /* Stick to top of container */
+            background: #f0f0f0;   /* Ensure background covers content */
+            z-index: 1;            /* Ensure header stays on top */
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimal Fixed Header Table</h1>
+    
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Alice</td><td>25</td><td>New York</td></tr>
+                <tr><td>Bob</td><td>30</td><td>London</td></tr>
+                <tr><td>Charlie</td><td>35</td><td>Tokyo</td></tr>
+                <tr><td>David</td><td>28</td><td>Paris</td></tr>
+                <tr><td>Eve</td><td>32</td><td>Berlin</td></tr>
+                <tr><td>Frank</td><td>29</td><td>Sydney</td></tr>
+                <tr><td>Grace</td><td>27</td><td>Toronto</td></tr>
+                <tr><td>Henry</td><td>31</td><td>Seoul</td></tr>
+                <tr><td>Ivy</td><td>26</td><td>Mumbai</td></tr>
+                <tr><td>Jack</td><td>33</td><td>Moscow</td></tr>
+                <tr><td>Kelly</td><td>24</td><td>Cairo</td></tr>
+                <tr><td>Liam</td><td>36</td><td>Rio</td></tr>
+                <tr><td>Mia</td><td>23</td><td>Lagos</td></tr>
+                <tr><td>Noah</td><td>37</td><td>Bangkok</td></tr>
+                <tr><td>Olivia</td><td>22</td><td>Istanbul</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Key CSS Properties:</h2>
+    <ul>
+        <li><code>position: sticky</code> on thead - Makes header stick to top</li>
+        <li><code>top: 0</code> - Positions sticky element at top</li>
+        <li><code>overflow-y: auto</code> on wrapper - Enables scrolling</li>
+        <li><code>z-index</code> - Ensures header stays above content</li>
+        <li><code>background</code> on thead - Prevents content showing through</li>
+    </ul>
+</body>
+</html>
