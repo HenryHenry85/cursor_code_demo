@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Header Scrollable Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .table-wrapper {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        thead th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #45a049;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e8f5e8;
+        }
+
+        tbody td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Alternative method using display: block */
+        .alternative-table {
+            margin-top: 40px;
+        }
+
+        .alternative-table table {
+            display: block;
+        }
+
+        .alternative-table thead,
+        .alternative-table tbody {
+            display: block;
+        }
+
+        .alternative-table thead {
+            width: 100%;
+        }
+
+        .alternative-table tbody {
+            height: 300px;
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        .alternative-table thead tr,
+        .alternative-table tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .alternative-table thead th,
+        .alternative-table tbody td {
+            width: 25%; /* Adjust based on number of columns */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .method-description {
+            background: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fixed Header Scrollable Table Examples</h1>
+
+    <div class="method-description">
+        <strong>Method 1: Using position: sticky</strong> - Modern approach that works well with CSS Grid and Flexbox. Best browser support in modern browsers.
+    </div>
+
+    <div class="table-container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>John Doe</td><td>john.doe@email.com</td><td>Engineering</td></tr>
+                    <tr><td>2</td><td>Jane Smith</td><td>jane.smith@email.com</td><td>Marketing</td></tr>
+                    <tr><td>3</td><td>Bob Johnson</td><td>bob.johnson@email.com</td><td>Sales</td></tr>
+                    <tr><td>4</td><td>Alice Brown</td><td>alice.brown@email.com</td><td>HR</td></tr>
+                    <tr><td>5</td><td>Charlie Davis</td><td>charlie.davis@email.com</td><td>Finance</td></tr>
+                    <tr><td>6</td><td>Diana Wilson</td><td>diana.wilson@email.com</td><td>Engineering</td></tr>
+                    <tr><td>7</td><td>Frank Miller</td><td>frank.miller@email.com</td><td>Marketing</td></tr>
+                    <tr><td>8</td><td>Grace Lee</td><td>grace.lee@email.com</td><td>Sales</td></tr>
+                    <tr><td>9</td><td>Henry Taylor</td><td>henry.taylor@email.com</td><td>HR</td></tr>
+                    <tr><td>10</td><td>Ivy Anderson</td><td>ivy.anderson@email.com</td><td>Finance</td></tr>
+                    <tr><td>11</td><td>Jack Thompson</td><td>jack.thompson@email.com</td><td>Engineering</td></tr>
+                    <tr><td>12</td><td>Kelly White</td><td>kelly.white@email.com</td><td>Marketing</td></tr>
+                    <tr><td>13</td><td>Liam Harris</td><td>liam.harris@email.com</td><td>Sales</td></tr>
+                    <tr><td>14</td><td>Mia Clark</td><td>mia.clark@email.com</td><td>HR</td></tr>
+                    <tr><td>15</td><td>Noah Lewis</td><td>noah.lewis@email.com</td><td>Finance</td></tr>
+                    <tr><td>16</td><td>Olivia Walker</td><td>olivia.walker@email.com</td><td>Engineering</td></tr>
+                    <tr><td>17</td><td>Paul Hall</td><td>paul.hall@email.com</td><td>Marketing</td></tr>
+                    <tr><td>18</td><td>Quinn Allen</td><td>quinn.allen@email.com</td><td>Sales</td></tr>
+                    <tr><td>19</td><td>Ruby Young</td><td>ruby.young@email.com</td><td>HR</td></tr>
+                    <tr><td>20</td><td>Sam King</td><td>sam.king@email.com</td><td>Finance</td></tr>
+                    <tr><td>21</td><td>Tina Wright</td><td>tina.wright@email.com</td><td>Engineering</td></tr>
+                    <tr><td>22</td><td>Uma Lopez</td><td>uma.lopez@email.com</td><td>Marketing</td></tr>
+                    <tr><td>23</td><td>Victor Hill</td><td>victor.hill@email.com</td><td>Sales</td></tr>
+                    <tr><td>24</td><td>Wendy Scott</td><td>wendy.scott@email.com</td><td>HR</td></tr>
+                    <tr><td>25</td><td>Xander Green</td><td>xander.green@email.com</td><td>Finance</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="method-description alternative-table">
+        <strong>Method 2: Using display: block</strong> - Alternative approach that converts table elements to block display. Better for older browser support.
+    </div>
+
+    <div class="table-container alternative-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>John Doe</td><td>john.doe@email.com</td><td>Engineering</td></tr>
+                <tr><td>2</td><td>Jane Smith</td><td>jane.smith@email.com</td><td>Marketing</td></tr>
+                <tr><td>3</td><td>Bob Johnson</td><td>bob.johnson@email.com</td><td>Sales</td></tr>
+                <tr><td>4</td><td>Alice Brown</td><td>alice.brown@email.com</td><td>HR</td></tr>
+                <tr><td>5</td><td>Charlie Davis</td><td>charlie.davis@email.com</td><td>Finance</td></tr>
+                <tr><td>6</td><td>Diana Wilson</td><td>diana.wilson@email.com</td><td>Engineering</td></tr>
+                <tr><td>7</td><td>Frank Miller</td><td>frank.miller@email.com</td><td>Marketing</td></tr>
+                <tr><td>8</td><td>Grace Lee</td><td>grace.lee@email.com</td><td>Sales</td></tr>
+                <tr><td>9</td><td>Henry Taylor</td><td>henry.taylor@email.com</td><td>HR</td></tr>
+                <tr><td>10</td><td>Ivy Anderson</td><td>ivy.anderson@email.com</td><td>Finance</td></tr>
+                <tr><td>11</td><td>Jack Thompson</td><td>jack.thompson@email.com</td><td>Engineering</td></tr>
+                <tr><td>12</td><td>Kelly White</td><td>kelly.white@email.com</td><td>Marketing</td></tr>
+                <tr><td>13</td><td>Liam Harris</td><td>liam.harris@email.com</td><td>Sales</td></tr>
+                <tr><td>14</td><td>Mia Clark</td><td>mia.clark@email.com</td><td>HR</td></tr>
+                <tr><td>15</td><td>Noah Lewis</td><td>noah.lewis@email.com</td><td>Finance</td></tr>
+                <tr><td>16</td><td>Olivia Walker</td><td>olivia.walker@email.com</td><td>Engineering</td></tr>
+                <tr><td>17</td><td>Paul Hall</td><td>paul.hall@email.com</td><td>Marketing</td></tr>
+                <tr><td>18</td><td>Quinn Allen</td><td>quinn.allen@email.com</td><td>Sales</td></tr>
+                <tr><td>19</td><td>Ruby Young</td><td>ruby.young@email.com</td><td>HR</td></tr>
+                <tr><td>20</td><td>Sam King</td><td>sam.king@email.com</td><td>Finance</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
